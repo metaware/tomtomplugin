@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.metawarelabs.tomtomplugin"
+      version="0.25">
+  <name>TomTom</name>
+  <description>TomTom Plugin</description>
+  <license>MIT</license>
+  <keywords>phonegap,tomtom</keywords>
+
+
+  <js-module src="www/js/TomTomPlugin.js" name="TomTomPlugin">
+      <clobbers target="window.TomTomPlugin" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="TomTomPlugin">
+        <param name="android-package" value="com.metawarelabs.tomtomplugin.TomTomPlugin" />
+      </feature>
+    </config-file>
+    <source-file src="src/android/TomTomPlugin.java" target-dir="src/com/metawarelabs/tomtomplugin" />
+  </platform>           
+</plugin>
